@@ -1,5 +1,5 @@
 // Timer settings
-const WORK_TIME = 30* 60; // 25 minutes in seconds
+const WORK_TIME = 25 * 60; // 25 minutes in seconds
 const BREAK_TIME = 5 * 60; // 5 minutes in seconds
 
 // DOM elements
