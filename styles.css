@@ -120,6 +120,7 @@ button:active {
     background: var(--primary-gradient);
     color: white;
     margin-bottom: 1.5rem;
+    margin-top: 2rem;
     width: 100%;
     padding: 1rem 2rem;
 }
