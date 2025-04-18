@@ -45,7 +45,7 @@ function updateDisplay() {
     const timeString = formatTime(timeLeft);
     timerDisplay.textContent = timeString;
     timerLabel.textContent = isWorkTime ? 'Work Time' : 'Break Time';
-    toggleButton.textContent = isWorkTime ? 'Switch to Break' : 'Switch to Work';
+    toggleButton.querySelector('.icon').textContent = isWorkTime ? '☀️' : '🌙';
     startPauseButton.textContent = isRunning ? 'Pause' : 'Start';
     currentTaskDisplay.textContent = currentTask || 'No task selected';
     
