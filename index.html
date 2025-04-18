@@ -13,18 +13,34 @@
 </head>
 <body>
     <div class="container">
-        <h1>Pomodoro Timer</h1>
+        <div class="container-header">
+            <h1>Pomodoro Timer</h1>
+            <button id="toggle-mode">Switch to Break</button>
+        </div>
         <div class="timer">
             <div class="timer-display">25:00</div>
             <div class="timer-label">Work Time</div>
+            <div class="current-task">No task selected</div>
             <div class="controls">
-                <button id="start">Start</button>
-                <button id="pause">Pause</button>
+                <button id="start-pause">Start</button>
+                <button id="add-time">+5 min</button>
                 <button id="reset">Reset</button>
             </div>
-            <button id="toggle-mode">Switch to Break</button>
         </div>
     </div>
+
+    <!-- Task Input Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <h2>What are you working on?</h2>
+            <input type="text" id="task-input" placeholder="Enter your task..." maxlength="50">
+            <div class="modal-buttons">
+                <button id="start-with-task">Start Timer</button>
+                <button id="cancel-task">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html> 
