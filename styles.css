@@ -36,6 +36,16 @@ body {
     width: 90%;
     max-width: 480px;
     margin: 1rem;
+    position: relative;
+}
+
+.container-header {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 h1 {
@@ -76,20 +86,25 @@ h1 {
 
 .controls {
     display: flex;
-    gap: 1rem;
+    flex-direction: row;
+    gap: 0.5rem;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     flex-wrap: wrap;
 }
 
 button {
-    padding: 0.875rem 1.75rem;
-    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
     font-weight: 600;
     border: none;
     border-radius: 0.75rem;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: var(--shadow-sm);
+    min-width: 100px;
+    flex: 1;
 }
 
 button:hover {
@@ -101,17 +116,12 @@ button:active {
     transform: translateY(0);
 }
 
-#start {
+#start-pause {
     background: var(--secondary-gradient);
     color: white;
 }
 
-#pause {
-    background: #ef4444;
-    color: white;
-}
-
-#reset {
+#add-time, #reset {
     background: #f3f4f6;
     color: var(--text-primary);
 }
@@ -119,10 +129,80 @@ button:active {
 #toggle-mode {
     background: var(--primary-gradient);
     color: white;
-    margin-bottom: 1.5rem;
-    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    margin: 0;
+    width: auto;
+    position: static;
+}
+
+.current-task {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    min-height: 1.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+}
+
+#task-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s ease;
+}
+
+#task-input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#start-with-task {
+    background: var(--secondary-gradient);
+    color: white;
+}
+
+#cancel-task {
+    background: #f3f4f6;
+    color: var(--text-primary);
 }
 
 @media (max-width: 480px) {
@@ -136,10 +216,17 @@ button:active {
     }
 
     .controls {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0.5rem;
     }
 
     button {
-        width: 100%;
+        min-width: 80px;
+        padding: 0.75rem 1rem;
+    }
+
+    #toggle-mode {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
     }
 } 
