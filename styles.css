@@ -30,7 +30,7 @@ body {
     max-width: 320px;
     margin: 1rem;
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 16px;
     position: relative;
 }
 
@@ -162,7 +162,7 @@ button {
 .modal-content {
     background-color: var(--background);
     padding: 1.5rem;
-    border-radius: 8px;
+    border-radius: 16px;
     width: 100%;
     max-width: 320px;
     text-align: center;
@@ -237,4 +237,9 @@ button {
         font-size: 0.875rem;
     }
 
+    .modal-content {
+        border-radius: 20px 20px 0 0;
+        padding: 1.5rem 1rem;
+        max-width: none;
+    }
 } 
