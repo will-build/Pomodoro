@@ -144,6 +144,13 @@ taskInput.addEventListener('keypress', (e) => {
     }
 });
 
+// Handle Escape key to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && taskModal.style.display === 'flex') {
+        hideTaskModal();
+    }
+});
+
 resetButton.addEventListener('click', () => {
     resetTimer();
     currentTask = '';
